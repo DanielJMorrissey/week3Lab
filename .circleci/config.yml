@@ -42,4 +42,4 @@ jobs:
     steps:
       - run:
           name: deploy-application
-          command: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS "export SERVER=\"$server\"; export PRIVATEKEY=\"$privatekey\"; rm -rf week3Lab/;git clone https://github.com/DanielJMorrissey/week3Lab.git; source week3Lab/deploy.sh"
+          command: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS "export server=\"$server\"; export privatekey=\"$privatekey\"; rm -rf week3Lab/;git clone https://github.com/DanielJMorrissey/week3Lab.git; source week3Lab/deploy.sh"
