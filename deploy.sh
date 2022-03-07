@@ -9,6 +9,6 @@ cd week3Lab
 
 npm install
 echo $privatekey > privatekey.pem
-echo $SERVER > server.crt
+echo $server > server.crt
 
 pm2 start ./bin/www --name example_app
