@@ -15,18 +15,18 @@ docker pull $IMAGE_NAME
 CONTAINER_EXISTS=$(docker ps -a | grep node_app)
 if [ "$CONTAINER_EXISTS" ]
 then
-  docker rm node_app
+  docker rm integration_app
 fi
 
 
-docker create -p 8443:8443 --name node_app $IMAGE_NAME
+docker create -p 8443:8443 --name integration_app $IMAGE_NAME
 
 echo $privatekey > privatekey.pem
 
 echo $server > server.crt
 
-docker cp ./privatekey.pem node_app:/privatekey.pem
+docker cp ./privatekey.pem integration_app:/privatekey.pem
 
-docker cp ./server.crt node_app:/server.crt
+docker cp ./server.crt integration_app:/server.crt
 
-docker start node_app
+docker start integration_app
