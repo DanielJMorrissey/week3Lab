@@ -12,21 +12,21 @@ fi
 docker pull $IMAGE_NAME
 
 
-CONTAINER_EXISTS=$(docker ps -a | grep integration_app)
+CONTAINER_EXISTS=$(docker ps -a | grep exampleapp)
 if [ "$CONTAINER_EXISTS" ]
 then
-  docker rm integration_app
+  docker rm exampleapp
 fi
 
 
-docker create -p 8443:8443 --name integration_app $IMAGE_NAME
+docker create -p 8443:8443 --name exampleapp $IMAGE_NAME
 
 echo $privatekey > privatekey.pem
 
 echo $server > server.crt
 
-docker cp ./privatekey.pem integration_app:/privatekey.pem
+docker cp ./privatekey.pem exampleapp:/privatekey.pem
 
-docker cp ./server.crt integration_app:/server.crt
+docker cp ./server.crt exampleapp:/server.crt
 
-docker start integration_app
+docker start exampleapp
