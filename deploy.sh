@@ -12,21 +12,21 @@ fi
 docker pull $IMAGE_NAME
 
 
-CONTAINER_EXISTS=$(docker ps -a | grep exampleapp)
+CONTAINER_EXISTS=$(docker ps -a | grep week3Lab)
 if [ "$CONTAINER_EXISTS" ]
 then
-  docker rm exampleapp
+  docker rm week3Lab
 fi
 
 
-docker create -p 8443:8443 --name exampleapp $IMAGE_NAME
+docker create -p 8443:8443 --name week3Lab $IMAGE_NAME
 
 echo $privatekey > privatekey.pem
 
 echo $server > server.crt
 
-docker cp ./privatekey.pem exampleapp:/privatekey.pem
+docker cp ./privatekey.pem week3Lab:/privatekey.pem
 
-docker cp ./server.crt exampleapp:/server.crt
+docker cp ./server.crt week3Lab:/server.crt
 
-docker start exampleapp
+docker start week3Lab
