@@ -12,7 +12,7 @@ fi
 docker pull $IMAGE_NAME
 
 
-CONTAINER_EXISTS=$(docker ps -a | grep node_app)
+CONTAINER_EXISTS=$(docker ps -a | grep integration_app)
 if [ "$CONTAINER_EXISTS" ]
 then
   docker rm integration_app
