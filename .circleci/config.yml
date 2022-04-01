@@ -54,7 +54,7 @@ jobs:
           command: docker create -p 8443:8443 --name week3Lab1 $IMAGE_NAME
      - run:
           name: copy-server-cert-and-privatekey-accross
-          command: docker cp ./privatekey.pem week3Lab:/privatekey.pem; docker cp ./server.crt week3Lab:/server.crt
+          command: docker cp ./privatekey.pem week3Lab1:/privatekey.pem; docker cp ./server.crt week3Lab1:/server.crt
      - run:
           name: start-docker-container
           command: docker start week3Lab1
