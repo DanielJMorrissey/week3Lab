@@ -5,7 +5,7 @@ CURRENT_INSTANCE=$(docker ps -a -q --filter ancestor="$IMAGE_NAME" --format="{{.
 
 if [ "$CURRENT_INSTANCE" ]
 then
-  docker rm -f $(docker stop $CURRENT_INSTANCE)
+  docker rm $(docker stop $CURRENT_INSTANCE)
 fi
 
 
