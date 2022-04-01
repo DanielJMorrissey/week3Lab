@@ -51,7 +51,7 @@ jobs:
           command: echo $server > server.crt && echo $privatekey > privatekey.pem
      - run:
           name: build-docker-image-for-integration-environment
-          command: docker create -p 3000:3000 --name week3Lab $IMAGE_NAME
+          command: docker create -p 8443:8443 --name week3Lab $IMAGE_NAME
      - run:
           name: copy-server-cert-and-privatekey-accross
           command: docker cp ./privatekey.pem week3Lab:/privatekey.pem; docker cp ./server.crt week3Lab:/server.crt
