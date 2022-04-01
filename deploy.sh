@@ -15,7 +15,7 @@ docker pull $IMAGE_NAME
 CONTAINER_EXISTS=$(docker ps -a | grep week3Lab)
 if [ "$CONTAINER_EXISTS" ]
 then
-  docker rm week3Lab
+  docker rm -f week3Lab
 fi
 
 
