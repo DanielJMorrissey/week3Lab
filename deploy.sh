@@ -19,7 +19,7 @@ then
 fi
 
 
-docker create -p 8443:8443 --name week3Lab $IMAGE_NAME
+docker create -p 3000:3000 --name week3Lab $IMAGE_NAME
 
 echo $privatekey > privatekey.pem
 
