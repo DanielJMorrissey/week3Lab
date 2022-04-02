@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-service docker restart
+sudo service docker restart
 
 CURRENT_INSTANCE=$(docker ps -a -q --filter ancestor="$IMAGE_NAME" --format="{{.ID}}")
 
