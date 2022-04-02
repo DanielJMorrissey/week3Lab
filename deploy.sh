@@ -5,7 +5,7 @@ CURRENT_INSTANCE=$(docker ps -a -q --filter ancestor="$IMAGE_NAME" --format="{{.
 
 if [ "$CURRENT_INSTANCE" ]
 then
-  sudo docker rm $(docker stop $CURRENT_INSTANCE)
+  sudo -s docker rm $(docker stop $CURRENT_INSTANCE)
 fi
 
 
@@ -15,7 +15,7 @@ docker pull $IMAGE_NAME
 CONTAINER_EXISTS=$(docker ps -a | grep week3Lab)
 if [ "$CONTAINER_EXISTS" ]
 then
-  sudo docker rm -f week3Lab
+  sudo -s docker rm -f week3Lab
 fi
 
 
