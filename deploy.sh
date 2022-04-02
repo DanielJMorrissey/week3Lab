@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-sudo service docker restart
-
 CURRENT_INSTANCE=$(docker ps -a -q --filter ancestor="$IMAGE_NAME" --format="{{.ID}}")
 
 
@@ -17,7 +15,7 @@ docker pull $IMAGE_NAME
 CONTAINER_EXISTS=$(docker ps -a | grep week3Lab)
 if [ "$CONTAINER_EXISTS" ]
 then
-  docker rm -f week3Lab
+  docker rm week3Lab
 fi
 
 
